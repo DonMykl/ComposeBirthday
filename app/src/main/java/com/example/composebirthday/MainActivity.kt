@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -31,7 +32,7 @@ class MainActivity : ComponentActivity() {
                 Surface(modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    WagwanText(message = "Happy Birthday Daisy!", from = "From: Don",
+                    WagwanImage(message = "Happy Birthday!", from = "From: Don",
                         modifier = Modifier.padding(8.dp)
                     )
                 }
@@ -65,13 +66,25 @@ fun WagwanText(modifier: Modifier = Modifier, message: String, from: String) {
 @Composable
 fun WagwanImage(modifier: Modifier = Modifier, message: String, from: String) {
     val image = painterResource(R.drawable.androidparty)
-    Image(painter = image, contentDescription = null)
+    Box(modifier) {
+        Image(
+            painter = image,
+            contentDescription = null)
+        WagwanText(
+            message = message,
+            from = from,
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(8.dp)
+        )
+    }
+
 }
 
 @Preview(showBackground = true)
 @Composable
 fun WagwanPreview() {
     ComposeBirthdayTheme {
-        WagwanImage(message = "Happy Birthday Daisy!", from = "From: Don")
+        WagwanImage(message = "Happy Birthday Bree!", from = "From: Don")
         }
 }
