@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ComposeBirthdayTheme {
-                //A Surface container using the 'background' color from the theme
+                // A Surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -52,7 +52,7 @@ fun WagwanText(modifier: Modifier = Modifier, message: String, from: String) {
     Column (
         verticalArrangement = Arrangement.Center,
         modifier = modifier
-    ){
+    ) {
         Text(
             text = message,
             fontSize = 100.sp,
@@ -87,7 +87,6 @@ fun WagwanImage(modifier: Modifier = Modifier, message: String, from: String) {
             .padding(8.dp)
         )
     }
-
 }
 
 @Preview(showBackground = true)
